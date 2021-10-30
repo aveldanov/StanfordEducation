@@ -12,6 +12,8 @@ class Concentration{
     
     var cards = [Card]()
     
+    var indexOfOneCardUp: Int?
+    
     init(numberOfPairOfCards: Int){
         
         for _ in 0..<numberOfPairOfCards{
@@ -19,16 +21,33 @@ class Concentration{
             cards.append(card)
             cards.append(card)
         }
-        
-        //TODO Shuffle Cards
+        //Shuffle Cards (indexes)
+        cards.shuffle()
     }
     
     
-    func chooseCard(at index: Int){
-        if cards[index].isFaceUp{
-            cards[index].isFaceUp = false
-        }else{
-            cards[index].isFaceUp = true
+    func chooseCard(at index: Int){        
+        if !cards[index].isMatched{
+            //make sure not to click the same card
+            if let matchIndex = indexOfOneCardUp, matchIndex != index{
+                // check if card match
+                if cards[matchIndex].id == cards[index].id{
+                    cards[matchIndex].isMatched = true
+                    cards[index].isMatched = true
+                }
+                
+                cards[index].isFaceUp = true
+                indexOfOneCardUp = nil
+                
+            }else{
+                // no or 2 cards are faceup
+                
+                for flipDownIndex in cards.indices{
+                    cards[flipDownIndex].isFaceUp = false
+                }
+                cards[index].isFaceUp = true
+                indexOfOneCardUp = index
+            }
         }
     }
 }

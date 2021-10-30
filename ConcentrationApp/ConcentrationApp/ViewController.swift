@@ -15,7 +15,7 @@ class ViewController: UIViewController {
             flipCountLabel.text = "flips: \(flipCount)"
         }
     }
-    var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺"]
+    var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
     
     var emojiDict = [Int: String]()
     
@@ -29,6 +29,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        print(Int.random(in:0..<emojiChoices.count))
     }
 
     
@@ -62,7 +64,8 @@ class ViewController: UIViewController {
             }else{
                 button.setTitle("", for: .normal)
                 button.titleLabel?.text = ""
-                button.backgroundColor = card.isMatched ? UIColor.white : UIColor.orange
+//                print("Matched?",card.isMatched)
+                button.backgroundColor = card.isMatched ? UIColor.clear : UIColor.orange
             }
         }
     }
@@ -71,6 +74,13 @@ class ViewController: UIViewController {
     
     
     func emoji(for card: Card)->String{
+        if emojiDict[card.id] == nil, emojiChoices.count > 0{
+            let randomIndex = Int.random(in: 0..<emojiChoices.count)
+            print("Random Index",randomIndex)
+            //remove emoji at index, so we won't use it again
+            emojiDict[card.id] = emojiChoices.remove(at: randomIndex)
+        }
+        
         return emojiDict[card.id] ?? "?"
     }
 
