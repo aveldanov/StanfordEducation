@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+
+class Concentration{
+    
+    var cards = [Card]()
+    
+    func chooseCard(at index: Int){
+
+    }
+}
+
+
+
+struct Card {
+    
+    var isFaceUp = false
+    var isMatched = false
+    var id: Int
+}
