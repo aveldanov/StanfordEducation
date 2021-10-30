@@ -14,16 +14,22 @@ class Concentration{
     
     init(numberOfPairOfCards: Int){
         
-        for id in 0..<numberOfPairOfCards{
-            let card = Card(id: id)
+        for _ in 0..<numberOfPairOfCards{
+            let card = Card()
             cards.append(card)
             cards.append(card)
         }
+        
+        //TODO Shuffle Cards
     }
     
     
     func chooseCard(at index: Int){
-
+        if cards[index].isFaceUp{
+            cards[index].isFaceUp = false
+        }else{
+            cards[index].isFaceUp = true
+        }
     }
 }
 
@@ -35,7 +41,14 @@ struct Card {
     var isMatched = false
     var id: Int
     
-    init(id: Int){
-        self.id = id
+    static var idFactory = 0
+    
+    init(){
+        self.id = Card.getUniqueId()
+    }
+    
+    static func getUniqueId()->Int{
+        idFactory += 1
+        return idFactory
     }
 }
