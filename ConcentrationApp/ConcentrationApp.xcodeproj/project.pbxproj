@@ -13,6 +13,7 @@
 		21637EBB272CF12400B9ED4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21637EB9272CF12400B9ED4A /* Main.storyboard */; };
 		21637EBD272CF12600B9ED4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21637EBC272CF12600B9ED4A /* Assets.xcassets */; };
 		21637EC0272CF12600B9ED4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21637EBE272CF12600B9ED4A /* LaunchScreen.storyboard */; };
+		21637EC9272DE1B300B9ED4A /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637EC8272DE1B300B9ED4A /* Concentration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		21637EBC272CF12600B9ED4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21637EBF272CF12600B9ED4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21637EC1272CF12600B9ED4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21637EC8272DE1B300B9ED4A /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
+		21637ECB272DE22500B9ED4A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +43,7 @@
 		21637EA7272CF12400B9ED4A = {
 			isa = PBXGroup;
 			children = (
+				21637ECB272DE22500B9ED4A /* README.md */,
 				21637EB2272CF12400B9ED4A /* ConcentrationApp */,
 				21637EB1272CF12400B9ED4A /* Products */,
 			);
@@ -58,6 +62,7 @@
 			children = (
 				21637EC7272CF17C00B9ED4A /* Supporting Files */,
 				21637EB7272CF12400B9ED4A /* ViewController.swift */,
+				21637ECA272DE1B800B9ED4A /* Model */,
 				21637EB9272CF12400B9ED4A /* Main.storyboard */,
 				21637EC1272CF12600B9ED4A /* Info.plist */,
 			);
@@ -73,6 +78,14 @@
 				21637EBE272CF12600B9ED4A /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		21637ECA272DE1B800B9ED4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				21637EC8272DE1B300B9ED4A /* Concentration.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +160,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21637EB8272CF12400B9ED4A /* ViewController.swift in Sources */,
+				21637EC9272DE1B300B9ED4A /* Concentration.swift in Sources */,
 				21637EB4272CF12400B9ED4A /* AppDelegate.swift in Sources */,
 				21637EB6272CF12400B9ED4A /* SceneDelegate.swift in Sources */,
 			);
