@@ -53,6 +53,15 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func resetButtonTapped(_ sender: UIButton) {
+        resetUI()
+        
+    }
+    
+    
+    
+    
+    
     func updateViewFromModel(){
         for index in cardButtons.indices{
             let button = cardButtons[index]
@@ -62,8 +71,9 @@ class ViewController: UIViewController {
                 button.backgroundColor = .white
                 button.setTitleColor(.red, for: .normal)
             }else{
-                button.setTitle("", for: .normal)
                 button.titleLabel?.text = ""
+                button.setTitle("", for: .normal)
+
 //                print("Matched?",card.isMatched)
                 button.backgroundColor = card.isMatched ? UIColor.clear : UIColor.orange
             }
@@ -82,6 +92,21 @@ class ViewController: UIViewController {
         }
         
         return emojiDict[card.id] ?? "?"
+    }
+    
+    
+    
+    func resetUI(){
+        for index in cardButtons.indices{
+            let button = cardButtons[index]
+            button.backgroundColor = .orange
+            button.setTitle("", for: .normal)
+            button.titleLabel?.text = ""
+        }
+        
+        emojiDict = [Int:String]()
+        emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
+        game = Concentration(numberOfPairOfCards: (cardButtons.count+1)/2)
     }
 
     
