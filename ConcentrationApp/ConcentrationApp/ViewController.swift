@@ -119,3 +119,14 @@ extension Int{
     }
 }
 
+
+
+enum Test{
+    case Hello
+    case none
+    
+}
+
+
+let test = Test.Hello
+
