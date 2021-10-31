@@ -9,14 +9,14 @@
 
 
 
-#### Debugger
+## Debugger
 
 - lldb: po  - print out object
 - lldb: p <object> - formated print out object
 
 
 
-#### Stride
+## Stride
 
 Swift has a helpful **stride()**, which lets you move from one value to another using any increment – and even lets you specify whether the upper bound is exclusive or inclusive.
 
@@ -33,7 +33,7 @@ for i in stride(from: 0, to: 0.5, by: 0.1) {
 </details>
 
 
-#### Assert
+## Assert
 
 One level up from print() are assertions, which are debug-only checks that will force your app to crash if a specific condition isn't true.
 
