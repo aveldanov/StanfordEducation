@@ -74,7 +74,6 @@ class ViewController: UIViewController {
             }else{
                 button.titleLabel?.text = ""
                 button.setTitle("", for: .normal)
-
 //                print("Matched?",card.isMatched)
                 button.backgroundColor = card.isMatched ? UIColor.clear : UIColor.orange
             }
@@ -99,7 +98,7 @@ class ViewController: UIViewController {
             button.setTitle("", for: .normal)
             button.titleLabel?.text = ""
         }
-        
+        flipCount = 0
         emojiDict = [Int:String]()
         emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
         game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
