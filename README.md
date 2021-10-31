@@ -1,6 +1,6 @@
 #  Stanford Swift Education - Very Basic - Refresher
 
-### Some useful hints
+### Some useful hints:
 
 #### **Outlet types:** 
  - Outlet
@@ -11,6 +11,6 @@
 
 #### Debugger
 
-lldb: po  - print out object
-lldb: p <object> - formated print out object
+- lldb: po  - print out object
+- lldb: p <object> - formated print out object
 
