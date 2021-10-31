@@ -82,11 +82,14 @@ class ViewController: UIViewController {
     
     private func emoji(for card: Card)->String{
         if emojiDict[card.id] == nil, emojiChoices.count > 0{
-            let randomIndex = Int.random(in: 0..<emojiChoices.count)
+//            let randomIndex = Int.random(in: 0..<emojiChoices.count)
+            let randomIndex = emojiChoices.count.randomInteger
+
             print("Random Index",randomIndex)
             //remove emoji at index, so we won't use it again
             emojiDict[card.id] = emojiChoices.remove(at: randomIndex)
-        }
+        }//            let randomIndex = Int.random(in: 0..<emojiChoices.count)
+
         
         return emojiDict[card.id] ?? "?"
     }
@@ -106,4 +109,13 @@ class ViewController: UIViewController {
 }
 
 
+
+
+ //MARK: Extensions
+
+extension Int{
+    var randomInteger: Int{
+        return Int.random(in: 0..<self)
+    }
+}
 
