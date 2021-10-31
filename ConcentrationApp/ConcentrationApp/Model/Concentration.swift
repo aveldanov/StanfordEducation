@@ -35,6 +35,8 @@ class Concentration{
     }
     
     init(numberOfPairOfCards: Int){
+        assert(numberOfPairOfCards > 0,"[Concentration.init] \(numberOfPairOfCards): numberOfPairOfCards is not valid" )
+
         for _ in 0..<numberOfPairOfCards{
             let card = Card()
             cards.append(card)
@@ -45,6 +47,7 @@ class Concentration{
     }
     
     func chooseCard(at index: Int){
+        assert(cards.indices.contains(index),"[Concentration.chooseCard] \(index): chosen index is not in the cards" )
         if !cards[index].isMatched{
             //make sure not to click the same card
             if let matchIndex = indexOfOneCardUp, matchIndex != index{

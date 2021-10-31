@@ -31,3 +31,19 @@ for i in stride(from: 0, to: 0.5, by: 0.1) {
 }
 ```
 </details>
+
+
+#### Assert
+
+One level up from print() are assertions, which are debug-only checks that will force your app to crash if a specific condition isn't true.
+
+This is different from **print()**, which would remain in your code if you shipped it, albeit mostly invisible. In fact, because calls to **assert()** are ignored in release builds of your app, you can do complex checks:
+
+       
+<details>
+  <summary markdown="span">assert() Code Example</summary>
+
+```
+assert(myReallySlowMethod() == true, "The slow method returned false, which is a bad thing!")
+```
+</details>
