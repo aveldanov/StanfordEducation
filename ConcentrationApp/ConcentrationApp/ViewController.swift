@@ -10,21 +10,21 @@ import UIKit
 class ViewController: UIViewController {
 
 
-    var flipCount = 0 {
+    private(set) var flipCount = 0 {
         didSet{
             flipCountLabel.text = "flips: \(flipCount)"
         }
     }
-    var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
+    private var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
     
-    var emojiDict = [Int: String]()
+    private var emojiDict = [Int: String]()
     
     var numberOfPairOfCards: Int {
         return (cardButtons.count+1)/2
     }
     
     
-    lazy var game: Concentration = Concentration(numberOfPairOfCards: numberOfPairOfCards)
+    private lazy var game: Concentration = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet weak var button: UIButton!
@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         
     }
     
-    func updateViewFromModel(){
+    private func updateViewFromModel(){
         for index in cardButtons.indices{
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -80,7 +80,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func emoji(for card: Card)->String{
+    private func emoji(for card: Card)->String{
         if emojiDict[card.id] == nil, emojiChoices.count > 0{
             let randomIndex = Int.random(in: 0..<emojiChoices.count)
             print("Random Index",randomIndex)

@@ -10,9 +10,9 @@ import Foundation
 
 class Concentration{
     
-    var cards = [Card]()
+    private(set) var cards = [Card]()
     
-    var indexOfOneCardUp: Int?{
+    private var indexOfOneCardUp: Int?{
         get{
             var foundIndex: Int?
             for index in cards.indices{
@@ -70,13 +70,13 @@ struct Card {
     var isMatched = false
     var id: Int
     
-    static var idFactory = 0
+    private static var idFactory = 0
     
     init(){
         self.id = Card.getUniqueId()
     }
     
-    static func getUniqueId()->Int{
+    private static func getUniqueId()->Int{
         idFactory += 1
         return idFactory
     }
