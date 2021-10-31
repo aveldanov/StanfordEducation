@@ -19,7 +19,12 @@ class ViewController: UIViewController {
     
     var emojiDict = [Int: String]()
     
-    lazy var game: Concentration = Concentration(numberOfPairOfCards: (cardButtons.count+1)/2)
+    var numberOfPairOfCards: Int {
+        return (cardButtons.count+1)/2
+    }
+    
+    
+    lazy var game: Concentration = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet weak var button: UIButton!
@@ -97,7 +102,7 @@ class ViewController: UIViewController {
         
         emojiDict = [Int:String]()
         emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
-        game = Concentration(numberOfPairOfCards: (cardButtons.count+1)/2)
+        game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     }
 }
 
