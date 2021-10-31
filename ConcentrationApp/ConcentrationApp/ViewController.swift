@@ -58,10 +58,6 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
     func updateViewFromModel(){
         for index in cardButtons.indices{
             let button = cardButtons[index]
@@ -80,9 +76,6 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    
-    
     func emoji(for card: Card)->String{
         if emojiDict[card.id] == nil, emojiChoices.count > 0{
             let randomIndex = Int.random(in: 0..<emojiChoices.count)
@@ -93,8 +86,6 @@ class ViewController: UIViewController {
         
         return emojiDict[card.id] ?? "?"
     }
-    
-    
     
     func resetUI(){
         for index in cardButtons.indices{
@@ -108,8 +99,6 @@ class ViewController: UIViewController {
         emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
         game = Concentration(numberOfPairOfCards: (cardButtons.count+1)/2)
     }
-
-    
 }
 
 

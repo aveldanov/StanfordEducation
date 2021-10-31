@@ -15,7 +15,6 @@ class Concentration{
     var indexOfOneCardUp: Int?
     
     init(numberOfPairOfCards: Int){
-        
         for _ in 0..<numberOfPairOfCards{
             let card = Card()
             cards.append(card)
@@ -25,8 +24,7 @@ class Concentration{
         cards.shuffle()
     }
     
-    
-    func chooseCard(at index: Int){        
+    func chooseCard(at index: Int){
         if !cards[index].isMatched{
             //make sure not to click the same card
             if let matchIndex = indexOfOneCardUp, matchIndex != index{
