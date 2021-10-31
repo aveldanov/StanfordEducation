@@ -12,7 +12,7 @@
 ## Debugger
 
 - lldb: po  - print out object
-- lldb: p <object> - formated print out object
+- lldb: p `object` - formated print out object
 
 ----
 
