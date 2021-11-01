@@ -48,7 +48,7 @@ assert(myReallySlowMethod() == true, "The slow method returned false, which is a
 </details>
 
 
-#### Protocols
+## Protocols
 
 Normally any protocol implementor must implement **all** the methods/properties in the protocol.
 However, it is possible to mark some methods in a protocol optional.
