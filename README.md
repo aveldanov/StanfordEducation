@@ -73,8 +73,7 @@ If you need an initializer, implement them both ...
 func setup() { ... }
 
 override init(frame: CGRect) {  // a designated initializer
-
-super.init(frame: frame)
+    super.init(frame: frame)
     setup()                     // might have to be before super.init
 }
 
