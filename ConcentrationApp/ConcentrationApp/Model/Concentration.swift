@@ -67,7 +67,17 @@ struct Concentration{
 
 
 
-struct Card {
+struct Card: Hashable {
+    
+    var hashValue: Int {
+        return id
+    }
+    
+    static func == (lhs: Card, rhs: Card)->Bool{
+        return lhs.id == rhs.id
+    }
+    
+    
     
     var isFaceUp = false
     var isMatched = false

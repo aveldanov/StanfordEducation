@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
     private var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
     
-    private var emojiDict = [Int: String]()
+    private var emojiDict = [Card: String]()
     
     var numberOfPairOfCards: Int {
         return (cardButtons.count+1)/2
@@ -81,17 +81,17 @@ class ViewController: UIViewController {
     }
     
     private func emoji(for card: Card)->String{
-        if emojiDict[card.id] == nil, emojiChoices.count > 0{
+        if emojiDict[card] == nil, emojiChoices.count > 0{
 //            let randomIndex = Int.random(in: 0..<emojiChoices.count)
             let randomIndex = emojiChoices.count.randomInteger
 
             print("Random Index",randomIndex)
             //remove emoji at index, so we won't use it again
-            emojiDict[card.id] = emojiChoices.remove(at: randomIndex)
+            emojiDict[card] = emojiChoices.remove(at: randomIndex)
         }//            let randomIndex = Int.random(in: 0..<emojiChoices.count)
 
         
-        return emojiDict[card.id] ?? "?"
+        return emojiDict[card] ?? "?"
     }
     
     func resetUI(){
@@ -102,7 +102,7 @@ class ViewController: UIViewController {
             button.titleLabel?.text = ""
         }
         flipCount = 0
-        emojiDict = [Int:String]()
+        emojiDict = [Card:String]()
         emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
         game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     }
@@ -119,14 +119,4 @@ extension Int{
     }
 }
 
-
-
-enum Test{
-    case Hello
-    case none
-    
-}
-
-
-let test = Test.Hello
 
