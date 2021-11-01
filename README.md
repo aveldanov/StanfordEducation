@@ -57,3 +57,31 @@ Any protocol that has optional methods must be marked **@objc.**
 
 
 In a class, **inits** must be marked **required** (or otherwise a subclass might not conform)
+
+
+## View
+
+A UIView’s initializer is different if it comes out of a storyboard
+**init(frame: CGRect)** // initializer if the UIView is created in code
+**init(coder: NSCoder)** // initializer if the UIView comes out of a storyboard
+
+If you need an initializer, implement them both ...
+<details>
+  <summary markdown="span">stride(from:to:by:) Code Example</summary>
+
+```
+func setup() { ... }
+
+override init(frame: CGRect) {  // a designated initializer
+
+super.init(frame: frame)
+    setup()                     // might have to be before super.init
+}
+
+required init?(coder aDecoder: NSCoder) { // a required, failable initializer
+    super.init(coder: aDecoder)
+    setup()
+}
+
+```
+</details>
