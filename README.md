@@ -46,3 +46,14 @@ This is different from **print()**, which would remain in your code if you shipp
 assert(myReallySlowMethod() == true, "The slow method returned false, which is a bad thing!")
 ```
 </details>
+
+
+#### Protocols
+
+Normally any protocol implementor must implement **all** the methods/properties in the protocol.
+However, it is possible to mark some methods in a protocol optional.
+
+Any protocol that has optional methods must be marked **@objc.**
+
+
+In a class, **inits** must be marked **required** (or otherwise a subclass might not conform)
