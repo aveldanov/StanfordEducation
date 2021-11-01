@@ -62,12 +62,12 @@ In a class, **inits** must be marked **required** (or otherwise a subclass might
 ## View
 
 A UIView’s initializer is different if it comes out of a storyboard
-**init(frame: CGRect)** // initializer if the UIView is created in code
+**init(frame: CGRect)** // initializer if the UIView is created in code <br/>
 **init(coder: NSCoder)** // initializer if the UIView comes out of a storyboard
 
 If you need an initializer, implement them both ...
 <details>
-  <summary markdown="span">stride(from:to:by:) Code Example</summary>
+  <summary markdown="span">Init Views Code Example</summary>
 
 ```
 func setup() { ... }
