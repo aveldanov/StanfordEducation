@@ -84,3 +84,10 @@ required init?(coder aDecoder: NSCoder) { // a required, failable initializer
 
 ```
 </details>
+
+Another alternative to initializers in UIView ...<br/>
+**awakeFromNib()** // this is only called if the UIView came out of a storyboard
+
+This is not an initializer (it’s called immediately after initialization is complete)
+All objects that inherit from NSObject in a storyboard are sent this
+Order is not guaranteed, so you cannot message any other objects in the storyboard here
