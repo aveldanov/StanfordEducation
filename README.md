@@ -61,7 +61,7 @@ In a class, **inits** must be marked **required** (or otherwise a subclass might
 
 ## View
 
-A UIView’s initializer is different if it comes out of a storyboard
+A UIView’s initializer is different if it comes out of a storyboard<br/>
 **init(frame: CGRect)** // initializer if the UIView is created in code <br/>
 **init(coder: NSCoder)** // initializer if the UIView comes out of a storyboard
 
