@@ -12,11 +12,15 @@ class ViewController: UIViewController {
 
     private(set) var flipCount = 0 {
         didSet{
-            flipCountLabel.text = "flips: \(flipCount)"
+//            flipCountLabel.text = "flips: \(flipCount)"
+            
+            updateFlipCountLabel()
+            
         }
     }
-    private var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
-    
+//    private var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
+    private var emojiChoices: String = "👻🎃👽💩🤡😈💀👺🙀🤖☠️👹"
+
     private var emojiDict = [Card: String]()
     
     var numberOfPairOfCards: Int {
@@ -26,7 +30,11 @@ class ViewController: UIViewController {
     
     private lazy var game: Concentration = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet weak var flipCountLabel: UILabel!{
+        didSet{
+            updateFlipCountLabel()
+        }
+    }
     @IBOutlet weak var button: UIButton!
     
     
@@ -86,8 +94,11 @@ class ViewController: UIViewController {
             let randomIndex = emojiChoices.count.randomInteger
 
             print("Random Index",randomIndex)
+            
+            let randomStringIndex = emojiChoices.index(emojiChoices.startIndex, offsetBy: randomIndex)
             //remove emoji at index, so we won't use it again
-            emojiDict[card] = emojiChoices.remove(at: randomIndex)
+            
+            emojiDict[card] = String(emojiChoices.remove(at: randomStringIndex))
         }//            let randomIndex = Int.random(in: 0..<emojiChoices.count)
 
         
@@ -103,9 +114,25 @@ class ViewController: UIViewController {
         }
         flipCount = 0
         emojiDict = [Card:String]()
-        emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
+//        emojiChoices = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
+        
+        emojiChoices = "👻🎃👽💩🤡😈💀👺🙀🤖☠️👹"
         game = Concentration(numberOfPairOfCards: numberOfPairOfCards)
     }
+    
+     //MARK: Helpers
+    
+    private func updateFlipCountLabel(){
+        let attributes: [NSAttributedString.Key: Any] = [.strokeWidth :5.0,
+                                                            .strokeColor: UIColor.systemOrange]
+        let attributedString = NSAttributedString(string: "flips: \(flipCount)", attributes: attributes)
+        
+        flipCountLabel.attributedText = attributedString
+        
+    }
+    
+    
+    
 }
 
 

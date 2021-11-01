@@ -14,17 +14,21 @@ struct Concentration{
     
     private var indexOfOneCardUp: Int?{
         get{
-            var foundIndex: Int?
-            for index in cards.indices{
-               if cards[index].isFaceUp{
-                    if foundIndex == nil{
-                       foundIndex = index
-                    }else{
-                       return nil
-                    }
-                }
-            }
-            return foundIndex
+            
+            let faceUpCardIndecies = cards.indices.filter{cards[$0].isFaceUp}
+            return faceUpCardIndecies.count == 1 ? faceUpCardIndecies.first : nil
+            
+//            var foundIndex: Int?
+//            for index in cards.indices{
+//               if cards[index].isFaceUp{
+//                    if foundIndex == nil{
+//                       foundIndex = index
+//                    }else{
+//                       return nil
+//                    }
+//                }
+//            }
+//            return foundIndex
         }
         
         set{
@@ -52,7 +56,7 @@ struct Concentration{
             //make sure not to click the same card
             if let matchIndex = indexOfOneCardUp, matchIndex != index{
                 // check if card match
-                if cards[matchIndex].id == cards[index].id{
+                if cards[matchIndex] == cards[index]{
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
                 }
@@ -81,7 +85,7 @@ struct Card: Hashable {
     
     var isFaceUp = false
     var isMatched = false
-    var id: Int
+    private var id: Int
     
     private static var idFactory = 0
     
