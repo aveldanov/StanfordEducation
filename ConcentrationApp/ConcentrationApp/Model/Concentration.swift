@@ -15,9 +15,15 @@ struct Concentration{
     private var indexOfOneCardUp: Int?{
         get{
             
-            let faceUpCardIndecies = cards.indices.filter{cards[$0].isFaceUp}
-            return faceUpCardIndecies.count == 1 ? faceUpCardIndecies.first : nil
+            //3
+            return cards.indices.filter{cards[$0].isFaceUp}.oneAndOnly
             
+          //2
+//            let faceUpCardIndecies = cards.indices.filter{cards[$0].isFaceUp}
+//            return faceUpCardIndecies.count == 1 ? faceUpCardIndecies.first : nil
+            
+            
+            //1
 //            var foundIndex: Int?
 //            for index in cards.indices{
 //               if cards[index].isFaceUp{
@@ -96,5 +102,17 @@ struct Card: Hashable {
     private static func getUniqueId()->Int{
         idFactory += 1
         return idFactory
+    }
+}
+
+
+
+ //MARK:  Extension
+
+extension Collection{
+    
+    // count and first are colleciton methods of the Collection Protocol
+    var oneAndOnly: Element?{
+        return count == 1 ? first : nil
     }
 }
