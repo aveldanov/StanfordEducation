@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     }
 //    private var emojiChoices: [String] = ["👻","🎃","👽","💩","🤡","😈","💀","👺","🙀","🤖","☠️","👹"]
     private var emojiChoices: String = "👻🎃👽💩🤡😈💀👺🙀🤖☠️👹"
-
     private var emojiDict = [Card: String]()
     
     var numberOfPairOfCards: Int {
