@@ -14,7 +14,4 @@ enum Log{
         case warning
         case error
     }
-    
-    
-    
 }
