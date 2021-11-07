@@ -14,8 +14,11 @@ struct PlayingCardDeck{
     
     
     init(){
-        for suit in Suit.all{
-            
+        for suit in PlayingCard.Suit.all{
+            for rank in PlayingCard.Rank.all{
+                
+                cards.append(PlayingCard(suit: suit, rank: rank))
+            }
             
         }
         
