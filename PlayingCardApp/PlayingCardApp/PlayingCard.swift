@@ -7,13 +7,19 @@
 
 import Foundation
 
-struct PlayingCard{
+struct PlayingCard: CustomStringConvertible{
+    var description: String{
+        return "\(rank) and \(suit)"
+    }
+    
     
     let suit: Suit
     let rank: Rank
     
     
-    enum Suit: String{
+    enum Suit: String, CustomStringConvertible{
+        var description: String
+        
         case spades = "♠️"
         case clubs = "♣️"
         case diamonds = "♦️"
@@ -26,7 +32,11 @@ struct PlayingCard{
     
     
     
-    enum Rank{
+    enum Rank: CustomStringConvertible{
+        var description: String{
+            return rank
+        }
+        
         case ace
         case face(String)
         case numeric(Int)
