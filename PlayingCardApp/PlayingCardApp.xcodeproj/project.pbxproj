@@ -66,11 +66,11 @@
 				21637FA2273862C300B9ED4A /* ViewController.swift */,
 				21637FB32738630800B9ED4A /* PlayingCard.swift */,
 				21637FB5273867A900B9ED4A /* PlayingCardDeck.swift */,
+				2134A853273FA44D00F779FD /* PlayingCardView.swift */,
 				21637FA4273862C300B9ED4A /* Main.storyboard */,
 				21637FA7273862C600B9ED4A /* Assets.xcassets */,
 				21637FAC273862C600B9ED4A /* Info.plist */,
 				21637FB2273862D100B9ED4A /* Supporting Files */,
-				2134A853273FA44D00F779FD /* PlayingCardView.swift */,
 			);
 			path = PlayingCardApp;
 			sourceTree = "<group>";
