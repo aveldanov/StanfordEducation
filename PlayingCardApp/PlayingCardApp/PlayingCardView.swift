@@ -55,7 +55,7 @@ class PlayingCardView: UIView {
     }
     
     private func configureCornerLabel(_ label: UILabel){
-        label.centerAttributedString(rankString + "\n" + suit, cornerFontSize)
+//        label.centerAttributedString(rankString + "\n" + suit, cornerFontSize)
         label.frame.size = CGSize.zero //reset the size so we can use sizeToFit()
         label.sizeToFit()
         label.isHidden = !isFaceUp
@@ -69,19 +69,19 @@ class PlayingCardView: UIView {
     
     
     
-//    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
-//        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
-//        // scale font based on slider in iPhone settings:
-//        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
-//        let paragraphStyle = NSMutableParagraphStyle()
-//        paragraphStyle.alignment = .center
-//        return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle, .font: font])
-//    }
+    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+        // scale font based on slider in iPhone settings:
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle, .font: font])
+    }
     
-//    private var cornerString: NSAttributedString{
-//        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
-//    }
-//    
+    private var cornerString: NSAttributedString{
+        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
+    }
+    
     
     
     override func draw(_ rect: CGRect) {
@@ -145,33 +145,3 @@ class PlayingCardView: UIView {
 
     
 }
-
-
-
-
-
-
-
-/*
- basics of drawing a circle
- //       if let context = UIGraphicsGetCurrentContext(){
- //            context.addArc(center: CGPoint(x: bounds.midX, y: bounds.midY), radius: 100, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
- //            context.setLineWidth(5.0)
- //            UIColor.green.setFill()
- //            UIColor.red.setStroke()
- //            context.strokePath()
- //            context.fillPath()
- //        }
-         
- //
- //        let path = UIBezierPath()
- //        path.addArc(withCenter: CGPoint(x: bounds.midX, y: bounds.midY), radius: 100, startAngle: 0, endAngle: 2*CGFloat.pi, clockwise: true)
- //        path.lineWidth = 5.0
- //        UIColor.green.setFill()
- //        UIColor.red.setStroke()
- //        path.stroke()
- //        path.fill()
-         
- 
- 
- */

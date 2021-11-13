@@ -76,22 +76,22 @@ extension PlayingCardView {
     }
 }
 
-
-extension UILabel{
-    
-//    private var cornerString: NSAttributedString{
-//        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
-//    }
-    
-    
-    func centerAttributedString(_ string: String, _ fontSize:CGFloat){
-        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
-        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
-
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        
-        let attributedTextLabel = NSMutableAttributedString(string: string, attributes: [.font: font, .paragraphStyle: paragraphStyle])
-        attributedText = attributedTextLabel
-    } 
-}
+//
+//extension UILabel{
+//    
+////    private var cornerString: NSAttributedString{
+////        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
+////    }
+//    
+//    
+//    public func centerAttributedString(_ string: String, _ fontSize:CGFloat){
+//        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+//        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+//
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.alignment = .center
+//        
+//        let attributedTextLabel = NSMutableAttributedString(string: string, attributes: [.font: font, .paragraphStyle: paragraphStyle])
+//        attributedText = attributedTextLabel
+//    } 
+//}
