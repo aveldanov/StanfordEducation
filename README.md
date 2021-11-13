@@ -96,9 +96,10 @@ Order is not guaranteed, so you cannot message any other objects in the storyboa
 
 ## Dynamic Font
 
-Scale font based on slider in iPhone settings:
+Scale font based on slider in iPhone settings</br>
 ```font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)```
-Track font size change
+
+Track font size change</br>
 ```
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setNeedsDisplay()
