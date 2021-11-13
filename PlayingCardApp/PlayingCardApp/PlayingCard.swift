@@ -16,7 +16,9 @@ struct PlayingCard: CustomStringConvertible{
     let rank: Rank
     
     
-    enum Suit: String{
+    enum Suit: String, CustomStringConvertible{
+        
+        
         case spades = "♠️"
         case clubs = "♣️"
         case diamonds = "♦️"
@@ -25,7 +27,7 @@ struct PlayingCard: CustomStringConvertible{
         static var all: [Suit] = [.spades,.clubs,.diamonds,.hearts]
     }
     
-
+    
     enum Rank: CustomStringConvertible{
         
         case ace
@@ -69,8 +71,8 @@ struct PlayingCard: CustomStringConvertible{
         }
         
     }
-
-
+    
+    
 }
 
 
