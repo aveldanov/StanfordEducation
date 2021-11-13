@@ -9,9 +9,13 @@ import UIKit
 
 class PlayingCardView: UIView {
     
-    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> AttributedString{
-        var font = UIFont.preferredFont(forTextStyle: .body)
-        
+    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
+        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+        // scale font based on slider in iPhone settings:
+        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.alignment = .center
+        return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle, .font: font])
     }
     
     
