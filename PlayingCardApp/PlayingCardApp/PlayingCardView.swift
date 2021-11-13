@@ -9,6 +9,15 @@ import UIKit
 
 class PlayingCardView: UIView {
     
+    private lazy var upperLeftCorenerLabel: UILabel = createCorenerLabel()
+    private lazy var lowerRightCorenerLabel: UILabel = createCorenerLabel()
+    private func createCorenerLabel() -> UILabel{
+        let label = UILabel()
+        label.numberOfLines = 0 //->as many lines as you need
+        addSubview(label)
+        return label
+    }
+    
     var rank: Int = 5{
         didSet{
             setNeedsDisplay()
@@ -27,6 +36,11 @@ class PlayingCardView: UIView {
             setNeedsLayout()
         }
     }
+    
+    
+    
+    
+    
     
     
     private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
@@ -51,6 +65,9 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
     }
+    
+    
+
     
 }
 
