@@ -45,6 +45,9 @@ class PlayingCardView: UIView {
         upperLeftCorenerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
         
         configureCornerLabel(lowerRightCorenerLabel)
+        // rotate the card upside fown
+        lowerRightCorenerLabel.transform = CGAffineTransform.identity.rotated(by: CGFloat.pi)
+        
         lowerRightCorenerLabel.frame.origin = CGPoint(x: bounds.maxX, y: bounds.maxY)
             .offsetBy(dx: -cornerOffset, dy: -cornerOffset)
             .offsetBy(dx: -lowerRightCorenerLabel.frame.size.width, dy: -lowerRightCorenerLabel.frame.size.height)
@@ -58,6 +61,11 @@ class PlayingCardView: UIView {
         label.isHidden = !isFaceUp
     }
     
+    // track font size change
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setNeedsDisplay()
+        setNeedsLayout()
+    }
     
     
     
@@ -88,6 +96,11 @@ class PlayingCardView: UIView {
 
     
 }
+
+
+
+
+
 
 
 /*
