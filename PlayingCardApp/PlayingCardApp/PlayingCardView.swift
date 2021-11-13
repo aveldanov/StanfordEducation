@@ -38,24 +38,42 @@ class PlayingCardView: UIView {
     }
     
     
-    
-    
-    
-    
-    
-    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
-        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
-        // scale font based on slider in iPhone settings:
-        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = .center
-        return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle, .font: font])
+     //MARK: Helpers
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        configureCornerLabel(upperLeftCorenerLabel)
+        upperLeftCorenerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
+        
+        configureCornerLabel(lowerRightCorenerLabel)
+        lowerRightCorenerLabel.frame.origin = CGPoint(x: bounds.maxX, y: bounds.maxY)
+            .offsetBy(dx: -cornerOffset, dy: -cornerOffset)
+            .offsetBy(dx: -lowerRightCorenerLabel.frame.size.width, dy: -lowerRightCorenerLabel.frame.size.height)
+        
     }
     
-    private var cornerString:NSAttributedString{
-        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
+    private func configureCornerLabel(_ label: UILabel){
+        label.centerAttributedString(rankString + "\n" + suit, cornerFontSize)
+        label.frame.size = CGSize.zero //reset the size so we can use sizeToFit()
+        label.sizeToFit()
+        label.isHidden = !isFaceUp
     }
     
+    
+    
+    
+//    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
+//        var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
+//        // scale font based on slider in iPhone settings:
+//        font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.alignment = .center
+//        return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle, .font: font])
+//    }
+    
+//    private var cornerString: NSAttributedString{
+//        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
+//    }
+//    
     
     
     override func draw(_ rect: CGRect) {
