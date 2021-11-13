@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2134A854273FA44D00F779FD /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134A853273FA44D00F779FD /* PlayingCardView.swift */; };
 		21637F9F273862C300B9ED4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637F9E273862C300B9ED4A /* AppDelegate.swift */; };
 		21637FA1273862C300B9ED4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637FA0273862C300B9ED4A /* SceneDelegate.swift */; };
 		21637FA3273862C300B9ED4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637FA2273862C300B9ED4A /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2134A853273FA44D00F779FD /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
 		21637F9B273862C300B9ED4A /* PlayingCardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayingCardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21637F9E273862C300B9ED4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21637FA0273862C300B9ED4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				21637FA7273862C600B9ED4A /* Assets.xcassets */,
 				21637FAC273862C600B9ED4A /* Info.plist */,
 				21637FB2273862D100B9ED4A /* Supporting Files */,
+				2134A853273FA44D00F779FD /* PlayingCardView.swift */,
 			);
 			path = PlayingCardApp;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21637FA3273862C300B9ED4A /* ViewController.swift in Sources */,
+				2134A854273FA44D00F779FD /* PlayingCardView.swift in Sources */,
 				21637F9F273862C300B9ED4A /* AppDelegate.swift in Sources */,
 				21637FB6273867A900B9ED4A /* PlayingCardDeck.swift in Sources */,
 				21637FB42738630800B9ED4A /* PlayingCard.swift in Sources */,
