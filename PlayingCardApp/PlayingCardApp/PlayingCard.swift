@@ -12,7 +12,6 @@ struct PlayingCard: CustomStringConvertible{
         return "\(rank) and \(suit)"
     }
     
-    
     let suit: Suit
     let rank: Rank
     
