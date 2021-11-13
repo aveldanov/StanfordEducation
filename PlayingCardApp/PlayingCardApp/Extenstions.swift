@@ -55,7 +55,7 @@ extension PlayingCardView {
     }
     
     public var cornerFontSize: CGFloat {
-        return bounds.size.height * SizeRatio.cornerFontSizeToBoundsHeight
+        return bounds.size.height * SizeRatio.cornerFontSizeToBoundsHeight*0.75
     }
     
     public var rankString: String {

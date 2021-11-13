@@ -18,7 +18,7 @@ class PlayingCardView: UIView {
         return label
     }
     
-    var rank: Int = 12{
+    var rank: Int = 2{
         didSet{
             setNeedsDisplay()
             setNeedsLayout()
@@ -38,7 +38,7 @@ class PlayingCardView: UIView {
     }
     
     
-     //MARK: Helpers
+    //MARK: Helpers
     override func layoutSubviews() {
         super.layoutSubviews()
         configureCornerLabel(upperLeftCorenerLabel)
@@ -55,7 +55,9 @@ class PlayingCardView: UIView {
     }
     
     private func configureCornerLabel(_ label: UILabel){
-//        label.centerAttributedString(rankString + "\n" + suit, cornerFontSize)
+        //        label.centerAttributedString(rankString + "\n" + suit, cornerFontSize)
+        label.attributedText = cornerString
+        
         label.frame.size = CGSize.zero //reset the size so we can use sizeToFit()
         label.sizeToFit()
         label.isHidden = !isFaceUp
@@ -69,7 +71,7 @@ class PlayingCardView: UIView {
     
     
     
-    private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
+    private func centeredAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         // scale font based on slider in iPhone settings:
         font = UIFontMetrics(forTextStyle: .body).scaledFont(for: font)
@@ -79,7 +81,7 @@ class PlayingCardView: UIView {
     }
     
     private var cornerString: NSAttributedString{
-        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
+        return centeredAttributedString(rankString + "\n" + suit,  cornerFontSize)
     }
     
     
@@ -91,8 +93,12 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
         
-        if let faceCardImage = UIImage(named: rankString+suit){
-            faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+        if isFaceUp{
+            if let faceCardImage = UIImage(named: rankString+suit){
+                faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
+            }else{
+                drawPips()
+            }
         }
     }
     
@@ -109,12 +115,12 @@ class PlayingCardView: UIView {
             let maxVerticalPipCount = CGFloat(pipsPerRowForRank.reduce(0) { max($1.count, $0)})
             let maxHorizontalPipCount = CGFloat(pipsPerRowForRank.reduce(0) { max($1.max() ?? 0, $0)})
             let verticalPipRowSpacing = pipRect.size.height / maxVerticalPipCount
-            let attemptedPipString = centeredAttributedString(suit, fontSize: verticalPipRowSpacing)
+            let attemptedPipString = centeredAttributedString(suit, verticalPipRowSpacing)
             let probablyOkayPipStringFontSize = verticalPipRowSpacing / (attemptedPipString.size().height / verticalPipRowSpacing)
-            let probablyOkayPipString = centeredAttributedString(suit, fontSize: probablyOkayPipStringFontSize)
+            let probablyOkayPipString = centeredAttributedString(suit,  probablyOkayPipStringFontSize)
             if probablyOkayPipString.size().width > pipRect.size.width / maxHorizontalPipCount {
-                return centeredAttributedString(suit, fontSize: probablyOkayPipStringFontSize /
-                    (probablyOkayPipString.size().width / (pipRect.size.width / maxHorizontalPipCount)))
+                return centeredAttributedString(suit, probablyOkayPipStringFontSize /
+                                                (probablyOkayPipString.size().width / (pipRect.size.width / maxHorizontalPipCount)))
             } else {
                 return probablyOkayPipString
             }
@@ -142,6 +148,6 @@ class PlayingCardView: UIView {
         }
     }
     
-
+    
     
 }
