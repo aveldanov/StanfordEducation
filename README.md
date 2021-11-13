@@ -108,3 +108,9 @@ Track font size change</br>
 ```
         
 
+##  @IBDesignable
+
+Use for images being viewed in @IBDesignable in mainView, not rendered </br>
+```
+UIImage(named: "imageName", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection)
+```
