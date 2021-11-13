@@ -6,6 +6,7 @@
 //
 
 import UIKit
+@IBDesignable
 
 class PlayingCardView: UIView {
     
@@ -17,19 +18,25 @@ class PlayingCardView: UIView {
         addSubview(label)
         return label
     }
-    
-    var rank: Int = 2{
+    // add in front of  var   @IBInspectable to see and insepct all vars in main view
+
+    @IBInspectable
+    var rank: Int = 11{
         didSet{
             setNeedsDisplay()
             setNeedsLayout()
         }
     }
+    @IBInspectable
+
     var suit: String = "❤️"{
         didSet{
             setNeedsDisplay()
             setNeedsLayout()
         }
     }
+    @IBInspectable
+
     var isFaceUp: Bool = true{
         didSet{
             setNeedsDisplay()
@@ -94,10 +101,14 @@ class PlayingCardView: UIView {
         roundedRect.fill()
         
         if isFaceUp{
-            if let faceCardImage = UIImage(named: rankString+suit){
+            if let faceCardImage = UIImage(named: rankString+suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection){
                 faceCardImage.draw(in: bounds.zoom(by: SizeRatio.faceCardImageSizeToBoundsSize))
             }else{
                 drawPips()
+            }
+        }else{
+            if let cardBackImage = UIImage(named: "cardback"){
+                cardBackImage.draw(in: bounds)
             }
         }
     }
