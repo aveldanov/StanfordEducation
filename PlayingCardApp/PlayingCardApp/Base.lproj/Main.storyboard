@@ -24,9 +24,6 @@
                                     <constraint firstAttribute="width" priority="750" constant="800" id="fjv-9r-0H2"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="rank">
-                                        <integer key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isFaceUp" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
@@ -42,6 +39,9 @@
                             <constraint firstItem="jj4-0f-R9Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gaH-R6-4vy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playingCardView" destination="jj4-0f-R9Z" id="Qsc-dA-h3Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

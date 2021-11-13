@@ -7,74 +7,105 @@
 
 import Foundation
 
-struct PlayingCard: CustomStringConvertible{
-    var description: String{
-        return "\(rank) \(suit)"
+///
+/// Represents a playing card
+///
+struct PlayingCard {
+    
+    /// Suit of the card
+    var suit: Suit
+    
+    /// Rank of the card
+    var rank: Rank
+    
+    ///
+    /// Represents a Suit in a playing card
+    ///
+    enum Suit: String {
+        case spades     = "♠️"
+        case hearts     = "♥️"
+        case clubs      = "♣️"
+        case diamonds   = "♦️"
+        
+        ///
+        /// Array containing all possible suits
+        ///
+        static var all: [Suit] = [.spades, .hearts, .clubs, .diamonds]
     }
     
-    let suit: Suit
-    let rank: Rank
-    
-    
-    enum Suit: String, CustomStringConvertible{
-        var description: String{
-            return rawValue
-        }
-        
-        case spades = "♠️"
-        case clubs = "♣️"
-        case diamonds = "♦️"
-        case hearts = "❤️"
-        
-        static var all: [Suit] = [.spades,.clubs,.diamonds,.hearts]
-    }
-    
-    
-    enum Rank: CustomStringConvertible{
-        
+    ///
+    /// Represents the Rank in a playing card
+    ///
+    enum Rank {
         case ace
-        case face(String)
+        case face(String) // ugly design
         case numeric(Int)
         
-        var order:Int {
+        ///
+        /// The order of each Rank
+        ///
+        var order: Int {
             switch self {
-            case .ace:
-                return 1
+            case .ace: return 1
+            case .numeric(let pips): return pips
             case .face(let kind) where kind == "J": return 11
             case .face(let kind) where kind == "Q": return 12
             case .face(let kind) where kind == "K": return 13
-            case .numeric(let pips):
-                return pips
-            default:
-                return 0
+            default: return 0 // ugly design
             }
         }
         
-        static var all: [Rank]{
+        ///
+        /// Array containing all possible suits
+        ///
+        static var all: [Rank] {
+            // Ace
             var allRanks: [Rank] = [.ace]
             
-            for pip in 2...10{
-                allRanks.append(.numeric(pip))
+            // 2...10
+            for pips in 2...10 {
+                allRanks.append(.numeric(pips))
             }
-            allRanks+=[.face("J"), .face("Q"),.face("K")]
+            
+            // Jack, Queen, King
+            allRanks += [.face("J"), .face("Q"), .face("K")]
             return allRanks
         }
-        
-        
-        var description: String{
-            switch self{
-            case .ace:
-                return "A"
-            case .numeric(let pips):
-                return String(pips)
-            case .face(let kind):
-                return kind
-            }
-        }
-        
     }
-    
-    
+}
+
+// Make `PlayingCard` confrom to `CustomStringConvertible`
+extension PlayingCard: CustomStringConvertible {
+    ///
+    /// String representation of a `PlayingCard`
+    ///
+    var description: String {
+        return "\(rank)\(suit)"
+    }
+}
+
+// Make `PlayingCard.Suit` confrom to `CustomStringConvertible`
+extension PlayingCard.Suit: CustomStringConvertible {
+    ///
+    /// String representation of a `PlayingCard.Suit`
+    ///
+    var description: String {
+        return rawValue
+    }
+}
+
+// Make `PlayingCard.Rank` confrom to `CustomStringConvertible`
+extension PlayingCard.Rank: CustomStringConvertible {
+    ///
+    /// String representation of a `PlayingCard.Rank`
+    ///
+    var description: String {
+        switch self {
+        case .ace: return "A"
+        case .numeric(let pips): return String(pips)
+        case .face(let kind): return kind
+        }
+    }
 }
 
 
