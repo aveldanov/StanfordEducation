@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2134A854273FA44D00F779FD /* PlayingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134A853273FA44D00F779FD /* PlayingCardView.swift */; };
+		2134A856273FAE7500F779FD /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2134A855273FAE7500F779FD /* Extenstions.swift */; };
 		21637F9F273862C300B9ED4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637F9E273862C300B9ED4A /* AppDelegate.swift */; };
 		21637FA1273862C300B9ED4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637FA0273862C300B9ED4A /* SceneDelegate.swift */; };
 		21637FA3273862C300B9ED4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21637FA2273862C300B9ED4A /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		2134A853273FA44D00F779FD /* PlayingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCardView.swift; sourceTree = "<group>"; };
+		2134A855273FAE7500F779FD /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		21637F9B273862C300B9ED4A /* PlayingCardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayingCardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21637F9E273862C300B9ED4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21637FA0273862C300B9ED4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				21637FA0273862C300B9ED4A /* SceneDelegate.swift */,
+				2134A855273FAE7500F779FD /* Extenstions.swift */,
 				21637FA2273862C300B9ED4A /* ViewController.swift */,
 				21637FB32738630800B9ED4A /* PlayingCard.swift */,
 				21637FB5273867A900B9ED4A /* PlayingCardDeck.swift */,
@@ -157,6 +160,7 @@
 			files = (
 				21637FA3273862C300B9ED4A /* ViewController.swift in Sources */,
 				2134A854273FA44D00F779FD /* PlayingCardView.swift in Sources */,
+				2134A856273FAE7500F779FD /* Extenstions.swift in Sources */,
 				21637F9F273862C300B9ED4A /* AppDelegate.swift in Sources */,
 				21637FB6273867A900B9ED4A /* PlayingCardDeck.swift in Sources */,
 				21637FB42738630800B9ED4A /* PlayingCard.swift in Sources */,

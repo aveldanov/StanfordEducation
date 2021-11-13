@@ -9,6 +9,26 @@ import UIKit
 
 class PlayingCardView: UIView {
     
+    var rank: Int = 5{
+        didSet{
+            setNeedsDisplay()
+            setNeedsLayout()
+        }
+    }
+    var suit: String = "❤️"{
+        didSet{
+            setNeedsDisplay()
+            setNeedsLayout()
+        }
+    }
+    var isFaceUp: Bool = true{
+        didSet{
+            setNeedsDisplay()
+            setNeedsLayout()
+        }
+    }
+    
+    
     private func centerAttributedString(_ string: String, _ fontSize:CGFloat) -> NSAttributedString{
         var font = UIFont.preferredFont(forTextStyle: .body).withSize(fontSize)
         // scale font based on slider in iPhone settings:
@@ -18,11 +38,15 @@ class PlayingCardView: UIView {
         return NSAttributedString(string: string, attributes: [.paragraphStyle: paragraphStyle, .font: font])
     }
     
+    private var cornerString:NSAttributedString{
+        return centerAttributedString(rankString + "\n" + suit,  cornerFontSize)
+    }
+    
     
     
     override func draw(_ rect: CGRect) {
         
-        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: 16.0)
+        let roundedRect = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
