@@ -15,11 +15,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         for _ in 1...10{
             if let card = deck.draw(){
-//                print(card)
+                print(card)
             }
         }
     }
-
-
 }
 
