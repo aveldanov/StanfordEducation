@@ -17,17 +17,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="jj4-0f-R9Z" customClass="PlayingCardView" customModule="PlayingCardApp" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="111.5" width="374" height="673"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jj4-0f-R9Z" secondAttribute="height" multiplier="5:9" id="WE7-36-PpO"/>
+                                    <constraint firstAttribute="width" priority="750" constant="800" id="fjv-9r-0H2"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="jj4-0f-R9Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4eI-3a-Emm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jj4-0f-R9Z" secondAttribute="trailing" constant="20" id="Jl7-Rc-nDL"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jj4-0f-R9Z" secondAttribute="bottom" id="Z9w-wb-bDO"/>
-                            <constraint firstItem="jj4-0f-R9Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cNo-7X-Vfw"/>
+                            <constraint firstItem="jj4-0f-R9Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="4eI-3a-Emm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jj4-0f-R9Z" secondAttribute="trailing" constant="20" id="Jl7-Rc-nDL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jj4-0f-R9Z" secondAttribute="bottom" constant="16" id="Z9w-wb-bDO"/>
+                            <constraint firstItem="jj4-0f-R9Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cNo-7X-Vfw"/>
+                            <constraint firstItem="jj4-0f-R9Z" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f8K-bJ-Edz"/>
+                            <constraint firstItem="jj4-0f-R9Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gaH-R6-4vy"/>
                         </constraints>
                     </view>
                 </viewController>

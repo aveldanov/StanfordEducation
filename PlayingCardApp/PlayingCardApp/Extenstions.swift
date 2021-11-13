@@ -39,7 +39,7 @@ extension CGPoint {
 }
 
 extension PlayingCardView {
-    private struct SizeRatio {
+    public struct SizeRatio {
         static let cornerFontSizeToBoundsHeight: CGFloat = 0.085
         static let cornerRadiusToBoundsHeight: CGFloat = 0.06
         static let cornerOffsetToCornerRadius: CGFloat = 0.33
