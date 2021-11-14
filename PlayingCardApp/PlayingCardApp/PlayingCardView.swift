@@ -268,7 +268,7 @@ extension PlayingCardView {
     
     /// The font size for the corner text
     private var cornerFontSize: CGFloat {
-        return bounds.size.height * SizeRatio.cornerFontSizeToBoundsHeight
+        return bounds.size.height * SizeRatio.cornerFontSizeToBoundsHeight*0.75
     }
     
     /// Get the string-representation of the current rank
